@@ -1,6 +1,13 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/header') %>
 
+<h2>My Shopping Cart</h2>
 
+<ul>
+   <% order.item.forEach(item => { %>
+        <%= item.name %>
+    <% })%>
 
+</ul>
 
-<%- include('../partials/footer.ejs') %>
+<button>Checkout</button>
+<%- include('../partials/footer') %>

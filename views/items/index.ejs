@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
-<h2>Laptop Online Store</h2>
+<h2>LaptopGuru Store</h2>
 <div>
     <% items.forEach(function(item) { %>
                 <h5>
                     <%= item.name %>
                 </h5>
                 <a href="/items/<%= item.id %>">Detail Page</a>
+                    <button>Add to Cart</button>
+                </form>
               
            
         <% }); %>
