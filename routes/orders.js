@@ -4,13 +4,13 @@ const router = express.Router()
 const orderCtrl = require('../controllers/orders')
 const order = require('../models/order')
 
-router.get('/past', orderCtrl.index)
-// router.post('/', orderCtrl.updateOrder)
+// router.get('/past', orderCtrl.index)
 
 router.get('/', orderCtrl.createEmpty)
-// router.get('/:id', orderCtrl.createWithItem)
 
-router.get('/show', orderCtrl.show)
+router.get('/:id', orderCtrl.show)
+
+router.patch('/:itemId', orderCtrl.updateOrder)
 
 
 module.exports = router

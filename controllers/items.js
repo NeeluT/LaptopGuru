@@ -1,11 +1,11 @@
 const Item = require('../models/item')
 
+
 function index(req, res) {
     Item.find({})
     .then(itemDocs => {
         // console.log('found all the items\n', itemDocs)
-
-        res.render('items/index', { items: itemDocs })
+        res.render('items/index', { items: itemDocs });
     })
     .catch(err => {
         console.log(err)
