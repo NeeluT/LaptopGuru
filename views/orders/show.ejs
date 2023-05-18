@@ -9,5 +9,7 @@
 
 </ul>
 
-<button>Checkout</button>
+<form method="POST" action="/orders/<%= user._id %>?_method=POST">
+    <button>Checkout</button>
+</form>    
 <%- include('../partials/footer') %>

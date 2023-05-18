@@ -1,5 +1,6 @@
 const Order = require('../models/order')
-const Item = require('../models/item')
+const Item = require('../models/item');
+const order = require('../models/order');
 
 // Do I ever want to have more than one incomplete order or user in the database?
 // My route/controller above can contain control flow and conditional logic
@@ -39,7 +40,6 @@ function createEmpty (req, res, next) {
             Order.create({user: req.user._id})
             .then(order => {
                 console.log('this is order*****************', order)
-                // res.render('orders/${order._id}',order) Andrew says that I don't HAVE TO render in my response. I might triger this in another controller
                 res.redirect(`orders/${order.id}`)
             })
             .catch(next)
@@ -79,9 +79,22 @@ function updateOrder(req, res, next) {
     
     }       
 
+    function checkout(req,res,next){
+        Order.findOne({user: req.user._id, checkout: false})
+            .then(order => {
+                order.checkout = !order.checkout;
+                return order.save()
+            })
+            .then(order => {
+                console.log('Checked out!!!!')
+                res.redirect('/')
+            })
+            .catch(next)  
+    }
 
 module.exports = {
     show,
     updateOrder,
     createEmpty,
+    checkout
 }

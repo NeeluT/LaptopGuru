@@ -1,18 +1,17 @@
 # Planning for LaptopGuru app
-On home page of your e-commerce app see a full list of the items you can purchase. Click login and see your shopping cart appearing on a new tab. Click on purchasing items to add them to your shopping cart. Chek out the total price for your order and notice a button for you to make a payment. Also, add reviews on the items and look at all left reviews on that items. If you change your mind you can go back and edit your review. In case, you added an item to your shopping cart and changed your mind on purchasing hit delete to remove that item. 
+On home page of your e-commerce app see a full list of the items you can purchase. Click login and see your shopping cart appearing on a new tab. Click on purchasing items to add them to your shopping cart. Click a button under your order to checkout. 
 
 ## Wireframes the UI◊
 App's pages:
 
     - home/landing page listing availabla purchase items
-    - item details page that shows item name, price and picture (and reviews?)
-    - Purchased items page (shopping cart with a 'Add a new item' link)
-    - Add an item page (An input and 'Add a new item' button)
-    - Add review page (An review and 'Add review' button)
-    - Update review page
+    - item details page that shows item details
+    - Order page (shopping cart with a "checkout" and "remove item" buttons and a "add item" link)
+    - Add an item'"page ('Add a new item' button along with input space)
 
-
-   ![e-commerce ERD](assets/ERD.pdf)
+   ![e-commerce ERD](assets/ERD.jpeg)
+   Trello Link:
+   https://trello.com/b/w3IPvvKn/user-stories
 
 
 ## Technologies I used:
@@ -25,10 +24,11 @@ App's pages:
 
 # Getting Started:
 Check out your e-commerce app:
-"deployment link" to delete!!
+
 
 
 ## Next Steps:
-- Add more graphics
+- Be able to see past orders
+- Add graphics
+- See a cart icon on items page that shows you how many items you have added to the cart
 - Add make a payment feature
-- ...

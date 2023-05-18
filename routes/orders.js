@@ -12,5 +12,7 @@ router.get('/:id', orderCtrl.show)
 
 router.patch('/:itemId', orderCtrl.updateOrder)
 
+router.post('/:userId', orderCtrl.checkout)
+
 
 module.exports = router
