@@ -3,32 +3,8 @@ const Item = require('../models/item');
 const order = require('../models/order');
 
 // Do I ever want to have more than one incomplete order or user in the database?
-// My route/controller above can contain control flow and conditional logic
+// My route/controller can contain control flow and conditional logic
 // While this is not RESTful it is a good solution if the answer to 29 is No 
-
-// when a user logs in if an order doesn't exist create one
-// function findCurrentOrCreate (req, res, next) {
-//     console.log('this is the user id in my new function', req.user._id)
-//     if ()
-//     Order.create({user: req.user._id})
-//         .then(order => {
-//             console.log('this is order*****************', order)
-//             // res.render('orders/${order._id}',order) Andrew says that I don't HAVE TO render in my response. I might triger this in another controller
-//             res.redirect(`orders/${order.id}`)
-//         })
-//         .catch(next)
-// }
-
-// function createEmpty (req, res, next) {
-//     console.log('this is req body in create order*********************', req.user._id)
-//     Order.create({user: req.user._id})
-//         .then(order => {
-//             console.log('this is order*****************', order)
-//             // res.render('orders/${order._id}',order) Andrew says that I don't HAVE TO render in my response. I might triger this in another controller
-//             res.redirect(`orders/${order.id}`)
-//         })
-//         .catch(next)
-// }
 
 
 // create an order with no items in it's item array
@@ -78,6 +54,8 @@ function updateOrder(req, res, next) {
         .catch(next)
     
 }       
+
+// change checkout property to true for the order that is checked out b hitting checkout button 
 
 function checkout(req,res,next){
     Order.findOne({user: req.user._id, checkout: false})

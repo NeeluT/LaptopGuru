@@ -25,6 +25,8 @@ App's pages:
 # Getting Started:
 Check out your e-commerce app:
 
+https://laptopguru.fly.dev/items
+
 
 
 ## Next Steps:
