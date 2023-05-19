@@ -1,7 +1,20 @@
 <%- include('../partials/header.ejs') %>
-
-<h1><%= item.name %> Laptop</h1>
+<div class="card mb-3 " >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="/Items_image/<%= item.image %>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= item.name %> Laptop</h3>
+          <small>$ <%= item.price %></small>
+          <p class="card-text"><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <h1><%= item.name %> Laptop</h1>
 <h3><%= item.description %></h3>
-<h3>$ <%= item.price %></h3>
+<h3>$ <%= item.price %></h3> -->
 
 <%- include('../partials/footer.ejs') %>

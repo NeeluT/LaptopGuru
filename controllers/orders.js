@@ -77,20 +77,20 @@ function updateOrder(req, res, next) {
         })
         .catch(next)
     
-    }       
+}       
 
-    function checkout(req,res,next){
-        Order.findOne({user: req.user._id, checkout: false})
-            .then(order => {
-                order.checkout = !order.checkout;
-                return order.save()
-            })
-            .then(order => {
-                console.log('Checked out!!!!')
-                res.redirect('/')
-            })
-            .catch(next)  
-    }
+function checkout(req,res,next){
+    Order.findOne({user: req.user._id, checkout: false})
+        .then(order => {
+            order.checkout = !order.checkout;
+            return order.save()
+        })
+        .then(order => {
+            console.log('Checked out!!!!')
+            res.redirect('/')
+        })
+        .catch(next)  
+}
 
 module.exports = {
     show,

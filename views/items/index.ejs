@@ -1,18 +1,36 @@
 <%- include('../partials/header') %>
 
-<h2>LaptopGuru Store</h2>
-<div>
-    <% items.forEach(function(item) { %>
-                <h5>
-                    <%= item.name %>
-                </h5>
-                <a href="/items/<%= item.id %>">Detail Page</a>
-                <form method="POST" action="/orders/<%= item.id %>?_method=PATCH">
-                    <button>Add to Cart</button>
-                </form>
-              
-           
-        <% }); %>
+<div class="container">
+    <h2>LaptopGuru Store</h2>
+    <div class=" w-100 h-100 d-flex " style="flex-wrap: wrap;">
+        <% items.forEach(function(item) { %>
+            <div class="card" style="width: 23rem;">
+                <img src="/Items_image/<%= item.image %>" class="card-img-top w-100 h-50" alt="<%= item.image %>" >
+                <div class="card-body w-100 h-50 d-flex justify-content-between align-items-start" style="flex-direction: column;">
+                    <div>
+                        <h5 class="card-title"><%= item.name %></h5>
+                        <small>$ <%= item.price %></small>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <form method="POST" action="/orders/<%= item.id %>?_method=PATCH">
+                            <button class="btn btn-primary border-0 p-2 text-white" >Add to Cart</button>
+                        </form>
+                        <a href="/items/<%= item.id %>" class="text-black mx-3">Detail Page</a> 
+                    </div>
+                    
+                </div>
+              </div>
+                    <!-- <h5>
+                        <%= item.name %>
+                    </h5>
+                    <a href="/items/<%= item.id %>">Detail Page</a>
+                    <form method="POST" action="/orders/<%= item.id %>?_method=PATCH">
+                        <button>Add to Cart</button>
+                    </form> -->
+                
+            
+            <% }); %>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>

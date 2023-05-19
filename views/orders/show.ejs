@@ -4,12 +4,21 @@
 
 <ul>
    <% order.items.forEach(item => { %>
-        <li><%= item.name %></li>
+
+        <li>
+            <div class="card" style="width: 18rem;">
+                <img src="/Items_image/<%= item.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= item.name %></h5>
+                  <small >$ <%= item.price %></small>
+                </div>
+              </div>
+        </li>
     <% })%>
 
 </ul>
 
 <form method="POST" action="/orders/<%= user._id %>?_method=POST">
-    <button>Checkout</button>
+    <button class="btn btn-primary">Checkout</button>
 </form>    
 <%- include('../partials/footer') %>
